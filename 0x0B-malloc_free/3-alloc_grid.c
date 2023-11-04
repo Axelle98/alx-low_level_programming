@@ -32,6 +32,6 @@ int **alloc_grid(int width, int height) {
         }
     }
 
-    return grid; // Return the pointer to the 2-dimensional array
+    return grid;
 }
 
