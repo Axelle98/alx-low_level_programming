@@ -13,12 +13,13 @@
  */
 int checker(int argc, int i, unsigned int j, char *argv[])
 {
-	for (i = 1; i <= argc; i++)
-		for (j = 0; argv[i] != '\0' && j < strlen(argv[i]); j++)
-			if (isdigit(argv[i][j]) == 0)
-				return (1);
-	return (0);
+    for (i = 1; i < argc; i++) // Change the loop condition from `<=` to `<`
+        for (j = 0; argv[i][j] != '\0' && j < strlen(argv[i]); j++) // Change `argv[i]` to `argv[i][j]`
+            if (!isdigit(argv[i][j])) // Simplify the condition
+                return (1);
+    return (0);
 }
+
 int main(int argc, char *argv[])
 {
 	int result, i;
